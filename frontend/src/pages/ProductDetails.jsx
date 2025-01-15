@@ -1,7 +1,9 @@
+import ProductInfo from "../components/products/ProductInfo";
+
 const ProductDetails = () => {
   return (
-    <section>
-      <h1>Product details</h1>
+    <section className="grid place-items-center py-24 px-4">
+      <ProductInfo />
     </section>
   );
 };
