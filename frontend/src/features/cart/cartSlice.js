@@ -5,8 +5,14 @@ export const cartSlice = createSlice({
   initialState: {
     cartItems: JSON.parse(localStorage.getItem("cartItems")) || [],
     userCartSummary: {
-      totalCartItems: 0,
-      totalAmount: 0,
+      totalCartItems:
+        JSON.parse(localStorage.getItem("cartSummary")) === null
+          ? 0
+          : JSON.parse(localStorage.getItem("cartSummary")).totalCartQty,
+      totalAmount:
+        JSON.parse(localStorage.getItem("cartSummary")) === null
+          ? 0
+          : JSON.parse(localStorage.getItem("cartSummary")).totalCartAmount,
     },
   },
   reducers: {
@@ -96,6 +102,11 @@ function calculateCartSummary(cart) {
     totalCartQty += item.product_quantity;
     totalCartAmount += item.product_quantity * item.product_price;
   });
+
+  localStorage.setItem(
+    "cartSummary",
+    JSON.stringify({ totalCartAmount, totalCartQty })
+  );
 
   return {
     totalCartAmount,

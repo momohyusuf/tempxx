@@ -4,6 +4,7 @@ import MarketPlace from "./pages/Marketplace";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import MainLayout from "./layout/MainLayout";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route path=":product_id" element={<ProductDetails />} />
         </Route>
 
-        
+        <Route path="checkout" element={<Checkout />} />
         <Route path="cart" element={<Cart />} />
       </Route>
     </Routes>
