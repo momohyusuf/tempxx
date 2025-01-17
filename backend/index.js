@@ -9,7 +9,16 @@ import { connectToDatabase } from "./config/mongodbConnection.js";
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://tempxx.vercel.app/",
+      "https://tempxx.vercel.app",
+      "http://localhost:5173/",
+      "http://localhost:5173",
+    ],
+  })
+);
 app.use(express.json());
 
 app.get("/health", (req, res) => {
