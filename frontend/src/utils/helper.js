@@ -6,6 +6,6 @@ export function formatCurrency(amount) {
 }
 
 export const serverUrl =
-  process.env.NODE_EVN === "production"
+  process.env.NODE_ENV === "production"
     ? "https://tempxx-76z8.onrender.com/api/v1"
     : "http://localhost:3000/api/v1";
