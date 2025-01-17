@@ -39,7 +39,7 @@ const Checkout = () => {
         handleInput={handleInput}
       />
 
-      <Payment email={customerDeliveryInfo.email} />
+      <Payment customerDeliveryInfo={customerDeliveryInfo} />
     </div>
   );
 };
