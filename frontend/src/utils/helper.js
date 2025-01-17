@@ -4,3 +4,5 @@ export function formatCurrency(amount) {
     currency: "NGN",
   }).format(amount);
 }
+
+export const serverUrl = "http://localhost:3000/api/v1";
